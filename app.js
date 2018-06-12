@@ -1,7 +1,7 @@
 
-Vue.component('calculator' , {
+Vue.component('calculadora' , {
     template : `<div class="container">
-                    <div class="calculator">
+                    <div class="calculadora">
                         <h2 class="title">Calculadora Basica</h2>
                         <botones-calculadora />
                         <final />
@@ -20,10 +20,10 @@ Vue.component('botones-calculadora', {
             <div>
                 <display-pantalla :value= "this.display" />
                 <div class="panel">
+                  <div class="opcionBox cBox-na">&nbsp;</div>
                   <div class="opcionBox" @click="clear">C</div>
-                  <div class="opcionBox" @click="enterOps(4)">÷</div>
-                  <div class="opcionBox" @click="enterOps(3)">X</div>
                   <div class="opcionBox" @click="del">DEL</div>
+                  <div class="opcionBox" @click="enterOps(3)">X</div>
                 </div>
                 <div class="panel">
                   <div class="opcionBox" @click="enterNum(7)">7</div>
@@ -41,7 +41,7 @@ Vue.component('botones-calculadora', {
                   <div class="opcionBox" @click="enterNum(1)">1</div>
                   <div class="opcionBox" @click="enterNum(2)">2</div>
                   <div class="opcionBox" @click="enterNum(3)">3</div>
-                  <div class="opcionBox cBox-na">&nbsp;</div>
+                  <div class="opcionBox" @click="enterOps(4)">÷</div>
                 </div>
                 <div class="panel">
                   <div class="opcionBox" @click="enterNum(0)">0</div>
@@ -189,5 +189,5 @@ Vue.component('final', {
 
 new Vue({
     el : '#app',
-    template : '<calculator/>'
+    template : '<calculadora/>'
 })
